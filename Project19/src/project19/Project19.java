@@ -34,9 +34,11 @@ public class Project19 {
     int stockMobile = 0;
     int stockTerminal = 0;
     int stockTv = 0;
+    int sellTv = 0;
     int totalVocalname = 0;
     int j;
     int k;
+    int m;
     int mobilePhone;
     int terminal;
     int tv;
@@ -145,7 +147,42 @@ public class Project19 {
                                 totalVocalname = totalVocalname + 1;
                                 
                             }
-                             System.out.println("How much Terminal will you sell?");
+                             System.out.println("How much Tv will you sell?");
+                        sellTerminal = scan.nextInt();
+                        //variable untuk mengetahui jumlah barang yang ingin dibeli.
+                        if(stockTerminal<sellTerminal){
+                            System.out.println("No more Stock!");
+                        }
+                        else { 
+                         stockTv = stockTv - sellTv;
+                        sellTv = sellTv * 1500000;
+                        if(totalVocalname>0){
+                          sellTv = sellTv - (sellTv * totalVocalname / 100);
+                            System.out.println("totalHarga"+sellTv);
+                        
+                        }
+                        else{
+                            System.out.println("totalHarga"+sellTv);}
+                    
+                        
+                
+                   
+                        }
+                        
+                        
+                   }
+                             break      ;
+               
+            case 3 : 
+                System.out.println("Enter Your Name = ");
+                        yourName = scan.nextLine();
+                         for(int l = 0; l<yourName.length();l++){
+                            if(yourName.charAt(l)=='a'||yourName.charAt(l)=='e'||yourName.charAt(l)=='o'||yourName.charAt(l)=='i'||yourName.charAt(l)
+                                    =='u'){
+                                totalVocalname = totalVocalname + 1;
+                                
+                            }
+                             System.out.println("How much TV will you sell?");
                         sellTerminal = scan.nextInt();
                         //variable untuk mengetahui jumlah barang yang ingin dibeli.
                         if(stockTerminal<sellTerminal){
@@ -161,26 +198,9 @@ public class Project19 {
                         }
                         else{
                             System.out.println("totalHarga"+sellTerminal);}
-                    
                         
-                
-                   
-                        }
-                        
-                        
-                   }
-                             break      ;
+                break;
                
-            case 3 : 
-                System.out.println("===TV===");
-                System.out.println("Price = RP 5.000.000");
-                System.out.println("How many Mobile Phones will you sell?");
-                System.out.println("=");
-                tv = scan.nextInt();
-                break;
-            default :
-                System.out.println("Wrong Answer.");
-                break;
         
         }
           
@@ -190,8 +210,9 @@ public class Project19 {
        
           
      
-        }while(i!=0);
-    
         }
-}      
+    
+        
+       
+        
        
